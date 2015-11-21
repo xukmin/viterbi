@@ -1,6 +1,6 @@
 // Main program for Viterbi decoding or convolutional encoding.
 //
-// Created by: Min Xu <mxu@scu.edu> or <xukmin@gmail.com>
+// Author: Min Xu <xukmin@gmail.com>
 // Date: 01/30/2015
 
 #include "viterbi.h"
@@ -78,7 +78,7 @@ int ParseInt(const std::string& s) {
     std::cout << "Expected a number, found " << s << std::endl;
     exit(1);
   }
-  return i; 
+  return i;
 }
 
 void ViterbiMain(const std::vector<std::string>& args) {

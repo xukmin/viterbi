@@ -1,6 +1,6 @@
 // Unit test for ViterbiCodec.
 //
-// Created by: Min Xu <mxu@scu.edu> or <xukmin@gmail.com>
+// Author: Min Xu <xukmin@gmail.com>
 // Date: 01/30/2015
 
 #include "viterbi.h"
@@ -68,7 +68,7 @@ void TestViterbiDecodingSamples() {
     // Inject 2 error bits.
     TestViterbiDecoding(codec, "111011011100101011", "1001101");
   }
-  
+
   {
     std::vector<int> polynomials;
     polynomials.push_back(91);
@@ -83,7 +83,7 @@ void TestViterbiDecodingSamples() {
 
     // Inject 4 error bits.
     TestViterbiDecoding(codec,
-                        "100100101110001011110101110111001011100110", 
+                        "100100101110001011110101110111001011100110",
                         "10110111");
   }
 }
@@ -142,9 +142,9 @@ int main(int argc, char** argv) {
     polynomials.push_back(79);
 
     ViterbiCodec codec(7, polynomials);
-   
+
     TestViterbiCodecAutomatic(codec);
-  } 
+  }
 
   {
     // LTE
@@ -154,7 +154,7 @@ int main(int argc, char** argv) {
     polynomials.push_back(121);
 
     ViterbiCodec codec(7, polynomials);
-   
+
     TestViterbiCodecAutomatic(codec);
   }
 

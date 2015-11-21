@@ -1,6 +1,6 @@
 // Implementation of ViterbiCodec.
 //
-// Created by: Min Xu <mxu@scu.edu> or <xukmin@gmail.com>
+// Author: Min Xu <xukmin@gmail.com>
 // Date: 01/30/2015
 
 #include "viterbi.h"
