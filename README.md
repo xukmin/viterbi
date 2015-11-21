@@ -1,7 +1,7 @@
 Convolutional Encoder and Viterbi Decoder
 =========================================
 
-Author: Min Xu <xukmin at gmail.com>
+Author: Min Xu (xukmin at gmail dot com)
 
 This program implements both a Convolutional Encoder and a Viterbi Decoder.
 
