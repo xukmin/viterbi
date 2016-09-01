@@ -5,7 +5,7 @@
 
 CXX = g++
 
-BINS = P2 viterbi_test
+BINS = viterbi_main viterbi_test
 SRCS = viterbi.cpp viterbi_main.cpp viterbi_test.cpp
 
 all: $(BINS)
@@ -20,9 +20,9 @@ viterbi.o: viterbi.cpp viterbi.h
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $<
 
 viterbi_main.o: viterbi_main.cpp viterbi.h
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $<
 
-P2: viterbi_main.o viterbi.o
+viterbi_main: viterbi_main.o viterbi.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@
 
 viterbi_test.o: viterbi_test.cpp viterbi.h
