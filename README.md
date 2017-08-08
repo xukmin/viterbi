@@ -16,23 +16,23 @@ make
 Run:
 
 ```bash
-./viterbi_main
-
-Inputs are read from stdin. The format is
-    <constraint> <polynomial>... <bits>
+./viterbi_main <constraint> <polynomial>... <bits>
+```
 
 Example input:
-    3 7 5 0011100001100111111000101100111011
+
+```
+3 7 5 0011100001100111111000101100111011
 ```
 
 More Features
 -------------
 
-- It supports both reading input from stdin or from commandline arguments. When
+- It supports reading input from stdin or from commandline arguments. When
   reading from stdin, it ignores blank lines or comment lines (which start with
   `#`).
 
-- It supports any number of generator polynomials instead of just 2.
+- It supports any number of generator polynomials.
 
 - It can perform convolutional encoding by providing `--encode` commandline
   flag.
@@ -55,11 +55,8 @@ Read input from stdin:
 
 Input format is:
 
-    <constraint> <polynomial>... <bits>
-
-Example input:
-
-    3 7 5 0011100001100111111000101100111011
+```
+<constraint> <polynomial>... <bits>
 ```
 
 Read input from commandline arguments:
@@ -93,12 +90,13 @@ Example commandlines:
 
 Error Handling
 --------------
+
 All inputs are validated, and proper error messages will be output.
 
-- The constraint should be greater than `0`.
+- The `constraint` should be greater than `0`.
 - A generator polynomial should be greater than `0` and less than
   `1 << constraint`.
-- The received bit sequence should be consisted with only `0`s and `1`s.
+- The received bit sequence should be consisted with only `0` and `1`.
 - The received bit sequence should be of length `N * <num-of-polynomials>` where
   `N` is an integer. Otherwise some bits must be missing during transmission.
   We will fill in appropriate number of trailing zeros.
@@ -126,4 +124,10 @@ bit errors.
 
 It also generates random messages of length `8`, `16` and `32` for several different
 convolutional codes and test if they can be properly encoded and decoded.
+
+Dependencies
+------------
+
+The code is self-contained, meaning it depends on nothing but the C++ standard
+library. The purpose is to make it easy to be integrated in any project.
 
