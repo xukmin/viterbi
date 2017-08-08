@@ -1,12 +1,13 @@
 Convolutional Encoder and Viterbi Decoder
 =========================================
 
-Author: Min Xu (xukmin at gmail dot com)
+Author: Min Xu &lt;xukmin@gmail.com&gt;
 
 This program implements both a Convolutional Encoder and a Viterbi Decoder in C++.
 
 Running ViterbiCodec
 --------------------
+
 Compile:
 
 ```bash
@@ -19,10 +20,10 @@ Run:
 ./viterbi_main <constraint> <polynomial>... <bits>
 ```
 
-Example input:
+Example use:
 
-```
-3 7 5 0011100001100111111000101100111011
+```bash
+./viterbi_main 3 7 5 0011100001100111111000101100111011
 ```
 
 More Features
@@ -52,6 +53,7 @@ Read input from stdin:
 
 ```bash
 ./viterbi_main [--reverse_polynomials] [--encode]
+```
 
 Input format is:
 
@@ -75,7 +77,7 @@ Flags:
     Do encoding instead of decoding.
 ```
 
-Example commandlines:
+Example usage:
 
 ```bash
 ./viterbi_main 3 7 5 0011100001100111111000101100111011
