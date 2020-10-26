@@ -22,9 +22,21 @@ Run:
 
 Example use:
 
+Decoding:
+
 ```bash
 ./viterbi_main 3 7 5 0011100001100111111000101100111011
+010111001010001
 ```
+
+Encoding:
+
+```bash
+$ ./viterbi_main 3 7 5 --encode 010111001010001
+0011100001100111111000101100111011
+```
+
+Please note there are `(constraint - 1)` "0" bits padded in front of the original message.
 
 More Features
 -------------
