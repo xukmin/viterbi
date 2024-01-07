@@ -1,12 +1,10 @@
-Convolutional Encoder and Viterbi Decoder
-=========================================
+# Convolutional Encoder and Viterbi Decoder
 
 Author: Min Xu &lt;xukmin@gmail.com&gt;
 
 This program implements both a Convolutional Encoder and a Viterbi Decoder in C++.
 
-Running ViterbiCodec
---------------------
+## Running ViterbiCodec
 
 Compile:
 
@@ -36,10 +34,10 @@ $ ./viterbi_main 3 7 5 --encode 010111001010001
 0011100001100111111000101100111011
 ```
 
-Please note there are `(constraint - 1)` "0" bits padded in front of the original message.
+Please note there are `(constraint - 1)` "0" bits padded in front of the
+original message.
 
-More Features
--------------
+## More Features
 
 - It supports reading input from stdin or from commandline arguments. When
   reading from stdin, it ignores blank lines or comment lines (which start with
@@ -102,8 +100,7 @@ Example usage:
 ./viterbi_main --encode --reverse_polynomials 3 3 5 1001101
 ```
 
-Error Handling
---------------
+## Error Handling
 
 All inputs are validated, and proper error messages will be output.
 
@@ -115,19 +112,12 @@ All inputs are validated, and proper error messages will be output.
   `N` is an integer. Otherwise some bits must be missing during transmission.
   We will fill in appropriate number of trailing zeros.
 
-Running Unit Test
------------------
+## Running Unit Test
 
-Run unit test:
+Build and run unit test:
 
 ```bash
 make test
-```
-
-Or
-
-```bash
-make viterbi_test && ./viterbi_test
 ```
 
 If the test passes, it will output `PASSED` and the end of the output;
@@ -136,11 +126,11 @@ otherwise, the test program aborts with assertion error.
 There are a few sample cases in the unit test, some are with manually injected
 bit errors.
 
-It also generates random messages of length `8`, `16` and `32` for several different
-convolutional codes and test if they can be properly encoded and decoded.
+It also generates random messages of length `8`, `16` and `32` for several
+different convolutional codes and test if they can be properly encoded and
+decoded.
 
-Dependencies
-------------
+## Dependencies
 
 The code is self-contained, meaning it depends on nothing but the C++ standard
 library. The purpose is to make it easy to be integrated in any project.
